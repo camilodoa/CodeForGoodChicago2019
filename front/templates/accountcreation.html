@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Account Creation</title>
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- google font api -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <style>
+
+    input[type=text] {
+        width: 20%;
+        padding: 5px 5px;
+        margin: auto;
+        text-align: center;
+        box-sizing: border-box;
+        border: 3px solid #ccc;
+              -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+        }
+
+        box{
+            grid-template-columns: 120px 120px 120px;
+        }
+
+
+        input[type=text]:focus {
+        border: 3px solid #555;
+        }
+
+        label {
+          padding-left: 20px;
+          text-align: center;
+          }
+
+
+        header {
+            background-color: white;
+            color: white;
+        }
+
+        body{
+            background-color: lightgray;
+            align-items: center;
+        }
+
+        img{
+            width: 500px;
+        }
+
+        #footer-image{
+            width: 100px;
+        }
+
+        footer{
+            padding-top: 10px;
+            background-color: #0076AB;
+            color: white;
+            padding-bottom: 10px;
+        }
+
+
+        input[type=submit] {
+            padding:5px 15px;
+            background:#2196F3;
+            border:0 none;
+            cursor:pointer;
+            color: white;
+        }
+
+    </style>
+
+  </head>
+
+  <body>
+      <div style="text-align: center; width:100%;">
+    <header>
+            <div id ="head-content">
+              <div id = "logo">
+                <a href="http://127.0.0.1:5000/home/" noreferrer noopener>
+                  <img src="{{ url_for('static', filename='img/poderTranslogo.png') }}" alt = "Poder logo">
+                </a>              '
+              </div>
+            </div>
+          </header>
+
+        <br>
+        <br>
+
+    {% block content %}
+      <h3>Registration</h3>
+
+      <br>
+
+      <form action="" method="post" novalidate>
+          {{ form.hidden_tag() }}
+          <p>
+              <span>{{ form.username.label }}</span> {{ form.username(size=32) }}
+              <br>
+              {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+              {% endfor %}
+              <br>
+              <span>{{ form.password.label }}</span> {{ form.password(size=32) }}
+              <br>
+          </p>
+
+          <p>{{ form.submit() }}</p>
+      </form>
+    {% endblock %}
+</div>
+  </body>
+</html>

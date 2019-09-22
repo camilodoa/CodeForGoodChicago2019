@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demographics</title>
+        <!-- boostrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <!-- google font api -->
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+                    <!-- css -->
+                    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+                    <!-- favicon -->
+                    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+
+
+                        </head>
+
+                        <style>
+
+
+                        input[type=text] {
+                            width: 20%;
+                            padding: 5px 5px;
+                            margin: auto;
+                            text-align: center;
+                            box-sizing: border-box;
+                            border: 3px solid #ccc;
+                                  -webkit-transition: 0.5s;
+                            transition: 0.5s;
+                            outline: none;
+                            }
+
+                            label {
+                                padding-left: 20px;
+                                align: "center";
+                                }
+
+
+                            input[type=text]:focus {
+                            border: 3px solid #555;
+                            }
+
+
+                            header {
+                                background-color: white;
+                                color: white;
+                            }
+
+                            body{
+                                background-color: lightgray;
+
+                            }
+
+                            img{
+                                width: 500px;
+                            }
+
+                            .form-control{
+                                align-content: center;
+                            }
+
+                            #footer-image{
+                                width: 100px;
+                            }
+
+                            footer{
+                                padding-top: 10px;
+                                background-color: #0076AB;
+                                color: white;
+                                padding-bottom: 10px;
+                            }
+
+
+                            input[type=submit] {
+                                padding:5px 15px;
+                                background:#2196F3;
+                                border:0 none;
+                                cursor:pointer;
+                                color: white;
+                            }
+
+
+                        </style>
+
+    <body>
+        <div style="text-align: center; width:100%;">
+            <header class="banner">
+                    <div id ="head-content">
+                      <div id = "logo">
+                        <a href="http://127.0.0.1:5000/home/" noreferrer noopener>
+                          <img alt = "Poder logo" src="{{ url_for('static', filename='img/poderTranslogo.png') }}">
+                        </a>
+                      </div>
+                    </div>
+                  </header>
+        {% block content %}
+        <br>
+        <br>
+        <div id="box">
+        <h3 class= "banner">Demographics</h3>
+
+        <br>
+
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+            <h5>Basic Information</h5>
+            <span >{{ form.first_name.label }}</span> {{ form.first_name(size=25) }}
+            <br>
+            {% for error in form.first_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            <br>
+            <span>{{ form.middle_name.label }}</span> {{ form.middle_name(size=25) }}
+            <br>
+            </p>
+            <span>{{ form.last_name.label }}</span> {{
+            form.last_name(size=25) }}
+            <br>
+            {% for error in form.last_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            <br>
+            <span>{{ form.date_of_birth.label }}</span> {{
+            form.date_of_birth(size=25) }}
+            <br>
+            <span>{{ form.gender.label }}</span> {{
+            form.gender(size=3) }}
+            </p>
+            <span>{{ form.marital_status.label }}</span>{{
+            form.marital_status(size=4) }}
+            </p>
+            <span>{{ form.spanish_origin.label }}</span>{{
+            form.spanish_origin(size=32) }}
+            </p>
+            <span>{{ form.country_of_origin.label }}</span>{{
+            form.country_of_origin(size=25) }}
+            </p>
+            <span >{{ form.racial_group.label }}</span>{{
+            form.racial_group(size=4) }}
+            </p>
+            <span>{{ form.english_second_lang.label }}</span>{{
+            form.english_second_lang(size = 32)}}
+            </p>
+            <span>{{ form.native_lang.label }}</span>{{
+            form.native_lang(size = 32)}}
+            <h3>Contact Information</h3>
+            </p>
+            <span>{{ form.address.label }}</span>{{
+            form.address(size = 32)}}
+            </p>
+            <span>{{ form.city.label }}</span>{{
+            form.city(size = 32)}}
+            </p>
+            <span>{{ form.state.label }}</span>{{
+            form.state(size = 32)}}
+            </p>
+            <span>{{ form.zip_code.label }}</span>{{
+            form.zip_code(size = 32)}}
+            </p>
+            <h2>Home phone or cell phone required</h2>
+            <span>{{ form.home_phone.label }}</span>{{
+            form.home_phone(size = 32)}}
+            </p>
+            <span>{{ form.cell_phone.label }}</span>{{
+            form.cell_phone(size = 32)}}
+            </p>
+            <span>{{ form.emergency_contact_name.label}}</span>{{
+            form.emergency_contact_name(size = 32)}}
+            </p>
+            <span>{{ form.emergency_contact_num.label }}</span>{{
+            form.emergency_contact_num(size = 32)}}
+            </p>
+            <span>{{ form.emergency_contact_relation.label }}</span>{{
+            form.emergency_contact_relation(size = 32)}}
+            </p>
+            <h3>Education</h3>
+            </p>
+            <span>{{ form.max_grade_completed.label }}</span>{{
+            form.max_grade_completed(size = 15)}}
+            </p>
+            <span>{{ form.school_type.label }}</span>{{
+            form.school_type(size = 5)}}
+            </p>
+            <span>{{ form.date_last_enrolled.label }}</span>{{
+            form.date_last_enrolled(size = 10)}}
+            </p>
+            <span>{{ form.num_school_years_completed.label }}</span>{{
+            form.num_school_years_completed(size = 8)}}
+            </p>
+        </div>
+
+            <h3>Employment</h3>
+            </p>
+            <span>{{ form.occupation.label }}</span>{{
+            form.occupation(size = 32)}}
+            </p>
+            <span>{{ form.employer_name.label }}</span>{{
+            form.employer_name(size = 32)}}
+            </p>
+            <span>{{ form.employer_address.label }}</span>{{
+            form.employer_address(size = 32)}}
+            </p>
+            <span>{{ form.employment_status.label }}</span>{{
+            form.employment_status(size = 4)}}
+            </p>
+            <span>{{ form.hours_per_week.label }}</span>{{
+            form.hours_per_week(size = 32)}}
+            </p>
+            <span>{{ form.work_phone.label }}</span>{{
+            form.work_phone(size = 32)}}
+            </p>
+            <h3>Student status</h3>
+            </p>
+            <span>{{ form.num_dependents_minor.label }}</span>{{
+            form.num_dependents_minor(size = 32)}}
+            </p>
+            <span>{{ form.num_dependents_other.label }}</span>{{
+            form.num_dependents_other(size = 32)}}
+            </p>
+            <span>{{ form.yearly_income.label }}</span>{{
+            form.yearly_income(size = 32)}}
+            </p>
+            <span>{{ form.public_assistance.label }}</span>{{
+            form.public_assistance(size = 32)}}
+            </p>
+            <span>{{ form.public_assistance_number.label }}</span>{ {
+            form.public_assistance_number(size = 32)}}
+            </p>
+            <span>{{ form.disability.label }}</span>{{
+            form.disability(size = 5)}}
+            </p>
+            <span>{{ form.living_area.label }}</span>{{
+            form.living_area(size = 3)}}
+            </p>
+            <span>{{ form.how_hear_about.label }}</span>{{
+            form.how_hear_about(size = 4)}}
+            </p>
+            <span>{{ form.add_student_info.label }}</span>{{
+            form.add_student_info(size = 5)}}
+            </p>
+            <span>{{ form.add_student_info2.label }}</span>{{
+            form.add_student_info2(size = 8)}}
+            </p>
+            <span>{{ form.children.label }}</span>{{
+            form.children(size=10)}}
+            </p>
+            <span>{{ form.num_children.label }}</span>{{
+            form.num_children(size = 10)}}
+            </p>
+            <span>{{ form.age_children.label }}</span>{{
+            form.age_children(size = 10)}}
+            </p>
+            <span>{{ form.school_type.label }}</span>{{
+            form.school_type(size = 3)}}
+            </p>
+            <span>{{ form.take_care_of_kids.label }}</span>{{
+            form.take_care_of_kids(size = 10)}}
+            </p>
+            <span>{{ form.immigration_status.label }}</span>{{
+            form.immigration_status(size = 4)}}
+            </p>
+            <span>{{ form.government_aid.label }}</span>{{
+            form.government_aid(size = 7)}}
+            </p>
+            <span>{{ form.checking_acc.label }}</span>{{
+            form.checking_acc(size = 10)}}
+            </p>
+            <span>{{ form.savings_acc.label }}</span>{{
+            form.savings_acc(size = 10)}}
+            </p>
+            <span>{{ form.library_card.label }}</span>{{
+            form.library_card(size = 10)}}
+            </p>
+            <span>{{ form.english_classes.label }}</span>{{
+            form.english_classes(size = 10)}}
+            </p>
+            <span>{{ form.english_class_details.label }}</span>{{
+            form.english_class_details(size = 10)}}
+            </p>
+            <span>{{ form.work.label }}</span>{{
+            form.work(size = 10)}}
+            </p>
+            <span>{{ form.work_benefits.label }}</span>{{
+            form.work_benefits(size = 5)}}
+            </p>
+            <span>{{ form.house_or_rent.label }}</span>{{
+            form.house_or_rent(size = 10)}}
+            <h3>Technology</h3>
+            </p>
+            <span>{{ form.smartphone.label }}</span>{{
+            form.smartphone(size = 10)}}
+            </p>
+            <span>{{ form.tablet.label }}</span>{{
+            form.tablet(size = 10)}}
+            </p>
+            <span>{{ form.internet.label }}</span>{{
+            form.internet(size = 10)}}
+            </p>
+            <span>{{ form.internet_access.label }}</span>{{
+            form.internet_access(size = 10)}}
+            </p>
+            <span>{{ form.internet_access_elsewhere.label }}</span>{{
+            form.internet_access_elsewhere(size = 10)}}
+            </p>
+            <span>{{ form.why_learn_english.label }}</span>{{
+            form.why_learn_english(sieze = 10)}}
+            </p>
+            <br>
+            <br>
+            <p>{{ form.submit() }}</p>
+        </form>
+        {% endblock %}
+    </div>
+    </div>
+    </body>
+    <footer>
+            <H6>Copyright © 2004 - 2019 PODER. All rights reserved. Design CPW
+                PODER · 6155 S. Pulaski, 2nd Floor · Chicago, IL · 60629 · 312-226-2002</H6>
+                <img id= "footer-image" src="{{ url_for('static', filename='img/gximage2.png') }}">
+          </footer>
+</html>

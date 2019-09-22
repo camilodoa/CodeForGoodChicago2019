@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Career Interest</title>
+        <!-- boostrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <!-- google font api -->
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+                    <!-- css -->
+                    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+                    <!-- favicon -->
+                    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+                <style>
+                         header {
+                                background-color: white;
+                                color: white;
+                            }
+
+                            body{
+                                background-color: lightgray;
+                            }
+
+                            img{
+                                width: 500px;
+                            }
+
+                            .form-control{
+                                align-content: center;
+                            }
+
+                            #footer-image{
+                                width: 100px;
+                            }
+
+                            footer{
+                                padding-top: 10px;
+                                background-color: #0076AB;
+                                color: white;
+                                padding-bottom: 10px;
+                            }
+
+                            input[type=submit] {
+                                padding:5px 15px;
+                                background:#2196F3;
+                                border:0 none;
+                                cursor:pointer;
+                                color: white;
+                            }
+                        </style>
+
+                        </head>
+
+    <body>
+            <div style="text-align: center; width:100%;">
+            <header>
+                    <div id ="head-content">
+                      <div id = "logo">
+                        <a href="http://127.0.0.1:5000/home/" noreferrer noopener>
+                          <img alt = "Poder logo" src="{{ url_for('static', filename='img/poderTranslogo.png') }}">
+                        </a>
+                      </div>
+                    </div>
+                  </header>
+        {% block content %}
+        <h3>Career Interests</h3>
+
+        <br>
+
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+            <span>{{ form.career_interest.label }}</span> {{
+                form.career_interest(size = 5) }}
+                </p>
+                <span>{{ form.orientation.label }}</span> {{
+                form.orientation(size = 10) }}
+                <p>{{ form.submit() }}</p>
+        </form>
+        {% endblock %}
+        <footer>
+                <H6>Copyright © 2004 - 2019 PODER. All rights reserved. Design CPW
+                    PODER · 6155 S. Pulaski, 2nd Floor · Chicago, IL · 60629 · 312-226-2002</H6>
+                    <img id= "footer-image" src="{{ url_for('static', filename='img/gximage2.png') }}">
+              </footer>
+              </div>
+        </body>
+    </html>

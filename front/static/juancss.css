@@ -1,0 +1,63 @@
+header {
+  background-color: #41B6E6;
+  color: white;
+}
+footer{
+  background-color: #0076AB;
+  color: white;
+}
+
+#button {
+  font-family: sans-serif;
+  font-size: 30px;
+  width: 450px;
+  height: 300px;
+  display: inline-block;
+  margin: 150px;
+}
+.redButton{
+  background-color: #e8927c; 
+  color: #da291c;
+  border: none;
+  display: inline-block;
+  padding: 30px, 45px;
+  text-align: center;
+}
+.redButton:hover {
+  background-color: #da291c;
+  color:  white;
+  transition: 0.9s;
+}
+.greenButton{
+  background-color: #009a44;
+  color: #215732;
+  border: none;
+  display: inline-block;
+  padding: 30px, 45px;
+  text-align: center;
+}
+.greenButton:hover {
+  background-color: #215732;
+  color:  white;
+  transition: 0.9s;
+}
+.yellowButton{
+  background-color: #F6BE00;
+  color: #ed8b00;
+  border: none;
+  display: inline-block;
+  padding: 30px, 45px;
+  text-align: center;
+}
+#longButton{
+  font-family: sans-serif;
+  font-size: 30px;
+  width: 750px;
+  height: 100px;
+  margin-bottom: 50px;
+}
+.yellowButton:hover {
+  background-color: #ed8b00;
+  color:  white;
+  transition: 0.9s;
+}

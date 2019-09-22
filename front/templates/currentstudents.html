@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Current Students</title>
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- google font api -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+
+    <style>
+
+      #button {
+        font-family: sans-serif;
+        font-size: 40px;
+        width: 450px;
+        height: 300px;
+        display: inline-block;
+        margin: 50px;
+      }
+      .redButton{
+        background-color: #e8927c;
+        color: #da291c;
+        border: none;
+        display: inline-block;
+        padding: 30px, 45px;
+        text-align: center;
+      }
+      .redButton:hover {
+        background-color: #da291c;
+        color:  white;
+        transition: 0.9s;
+      }
+      .greenButton{
+        background-color: #009a44;
+        color: #215732;
+        border: none;
+        display: inline-block;
+        padding: 30px, 45px;
+        text-align: center;
+      }
+      .greenButton:hover {
+        background-color: #215732;
+        color:  white;
+        transition: 0.9s;
+      }
+      .yellowButton{
+        background-color: #F6BE00;
+        color: #ed8b00;
+        border: none;
+        display: inline-block;
+        padding: 30px, 45px;
+        text-align: center;
+      }
+      #longButton{
+        font-family: sans-serif;
+        font-size: 40px;
+        width: 750px;
+        height: 100px;
+        margin-bottom: 50px;
+      }
+      .yellowButton:hover {
+        background-color: #ed8b00;
+        color:  white;
+        transition: 0.9s;
+      }
+      header {
+        background-color: white;
+        color: white;
+      }
+
+      img{
+        width: 500px;
+      }
+
+      #footer-image{
+        width: 100px;
+      }
+
+      footer{
+        padding-top: 10px;
+        background-color: #0076AB;
+        color: white;
+        padding-bottom: 10px;
+      }
+      body {
+          text-align: center;
+          align-content: center;
+          background-image: url("/static/img/chicago.jpg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-attachment: scroll;
+          background-size: cover;
+          background-position: center;
+
+        }
+        #blue-background{
+          background-color: #0076AB;
+          color: white;
+        }
+    </style>
+
+  </head>
+
+  <body>
+    <header>
+    <div id ="head-content">
+      <div id = "logo">
+        <a href="http://127.0.0.1:5000/home/" noreferrer noopener>
+          <img alt = "Poder logo" src="{{ url_for('static', filename='img/poderTranslogo.png') }}">
+        </a>
+      </div>
+    </div>
+</header>
+
+<div id = "content">
+<div id = "in-line-columns">
+  <a  href= "http://127.0.0.1:5000/grades/"><button id="button" class="redButton">Grades</button></a>
+  <a href = "http://127.0.0.1:5000/scheduleOrientation/"><button id="button" class="yellowButton">Schedule Orientation</button></a>
+  <a href = "http://127.0.0.1:5000/calendar/"><button id="button" class="greenButton">Calendar</button></a>
+
+</div>
+  </body>
+  <footer>
+    <H6>Copyright © 2004 - 2019 PODER. All rights reserved. Design CPW
+        PODER · 6155 S. Pulaski, 2nd Floor · Chicago, IL · 60629 · 312-226-2002</H6>
+        <img id= "footer-image" src="{{ url_for('static', filename='img/gximage2.png') }}">
+  </footer>
+</html>
